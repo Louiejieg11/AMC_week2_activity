@@ -1,0 +1,53 @@
+import React, {useState} from 'react'
+import{Text, StyleSheet, Image} from 'react-native'
+import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context'
+
+
+const TextInANest = () => {
+  const [titleText, setTitleText] = useState("Louiejie")
+  const bodyText = "Ang gusto pag aralan about sa framework gusto mas mapalawak pa lalo ang kaalamn ko dito mahal ko christian gusto sya pantayin "
+
+  const onPressTitle = () => {
+    setTitleText("Gonzales")
+  }
+
+
+return (
+  <SafeAreaProvider>
+    <SafeAreaView style={styles.container}>
+    <Text style={styles.baseText}><Text 
+    style={{fontWeight:'bold', fontSize:20 }}>Gonzales </Text>
+    <Text style={styles.titleText} onPress={onPressTitle}>
+    {titleText}
+    {'\n'}
+    {'\n'}
+    </Text>
+    
+    <Text numberOfLines={5}>Ang <Text style={{color:"red"}}>gusto</Text> pag aralan <Text style={{color:"blue"}}>about sa framework</Text> gusto mas mapalawak pa lalo ang kaalamn ko dito mahal ko christian gusto sya pantayin </Text>
+    </Text>
+    </SafeAreaView>
+
+
+  </SafeAreaProvider>
+)
+}
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  baseText: {
+    fontFamily: 'Cochin',
+    textAlign:'center'
+  },
+  titleText: {
+    color:'red',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+});
+
+
+
+export default TextInANest;
